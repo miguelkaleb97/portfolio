@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Miguel Kaleb Batista">
+    <meta name="description" content="Portfólio de Miguel Kaleb Batista - Desenvolvimento de Sistemas">
+    <title>Miguel Kaleb | Desenvolvedor</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #263238;
+        }
+
+        :root {
+            --verde: #1abc9c;
+            --verde-escuro: #119b83;
+            --azul: #263b50;
+            --branco: #ffffff;
+        }
+
+        header {
+            background: var(--azul);
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: var(--verde);
+        }
+
+        .inicio {
+            background: var(--verde);
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .perfil {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-bottom: 25px;
+        }
+
+        .inicio h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .inicio p {
+            font-size: 18px;
+        }
+
+        .codigo {
+            margin: 20px 0;
+            font-size: 28px;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .titulo {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            color: var(--azul);
+            margin-bottom: 45px;
+        }
+
+        .sobre {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.9;
+            font-size: 16px;
+        }
+
+        .habilidades {
+            background: #f5f8f8;
+        }
+
+        .lista-habilidades {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .habilidade {
+            background: white;
+            padding: 22px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #00000010;
+            color: var(--azul);
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .habilidade:hover {
+            transform: translateY(-5px);
+            color: var(--verde-escuro);
+        }
+
+        .habilidade i {
+            color: var(--verde);
+            margin-right: 8px;
+        }
+
+        .projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .projeto {
+            background: white;
+            border-radius: 14px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px #00000012;
+            transition: .3s;
+        }
+
+        .projeto:hover {
+            transform: translateY(-7px);
+        }
+
+        .projeto i {
+            font-size: 42px;
+            color: var(--verde);
+            margin-bottom: 18px;
+        }
+
+        .projeto h3 {
+            color: var(--azul);
+            margin-bottom: 12px;
+        }
+
+        .projeto p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .contato {
+            background: var(--verde);
+            color: white;
+            text-align: center;
+        }
+
+        .contato .titulo {
+            color: white;
+        }
+
+        .contato p {
+            margin: 15px 0;
+            font-size: 17px;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 28px;
+            background: white;
+            color: var(--verde-escuro);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .botao:hover {
+            background: var(--azul);
+            color: white;
+        }
+
+        footer {
+            background: var(--azul);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 12px;
+            }
+
+            .inicio h1 {
+                font-size: 30px;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU -->
+    <header>
+        <div class="logo">MK<span style="color:#1abc9c;">.</span></div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- APRESENTAÇÃO -->
+    <section class="inicio" id="inicio">
+
+        <img
+            src="assets/img/portfolio/perfil.png"
+            alt="Avatar de Miguel Kaleb"
+            class="perfil"
+        >
+
+        <h1>MIGUEL KALEB BATISTA</h1>
+
+        <div class="codigo">
+            <i class="fa-solid fa-code"></i>
+        </div>
+
+        <p>Técnico em Desenvolvimento de Sistemas</p>
+        <p>Programação • Tecnologia • Inovação</p>
+
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+
+        <h2 class="titulo">SOBRE MIM</h2>
+
+        <div class="sobre">
+            <p>
+                Olá! Sou Miguel Kaleb Batista, estudante da área de
+                Desenvolvimento de Sistemas e apaixonado por tecnologia,
+                programação e inovação.
+            </p>
+
+            <br>
+
+            <p>
+                Tenho interesse em desenvolvimento web, criação de sistemas
+                e soluções digitais. Busco transformar ideias em projetos
+                funcionais por meio da lógica de programação, criatividade
+                e aprendizado contínuo.
+            </p>
+
+            <br>
+
+            <p>
+                Estou sempre buscando aprimorar meus conhecimentos,
+                explorar novas tecnologias e desenvolver minhas habilidades
+                como programador.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- HABILIDADES -->
+    <section class="habilidades" id="habilidades">
+
+        <h2 class="titulo">MINHAS HABILIDADES</h2>
+
+        <div class="lista-habilidades">
+
+            <div class="habilidade">
+                <i class="fa-brands fa-html5"></i> HTML5
+            </div>
+
+            <div class="habilidade">
+                <i class="fa-brands fa-css3-alt"></i> CSS3
+            </div>
+
+            <div class="habilidade">
+                <i class="fa-brands fa-js"></i> JavaScript
+            </div>
+
+            <div class="habilidade">
+                <i class="fa-brands fa-python"></i> Python
+            </div>
+
+            <div class="habilidade">
+                <i class="fa-solid fa-database"></i> Banco de Dados
+            </div>
+
+            <div class="habilidade">
+                <i class="fa-brands fa-git-alt"></i> Git
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos">
+
+        <h2 class="titulo">MEUS PROJETOS</h2>
+
+        <div class="projetos">
+
+            <div class="projeto">
+                <i class="fa-solid fa-code"></i>
+                <h3>Desenvolvimento Web</h3>
+                <p>
+                    Criação de páginas web utilizando HTML, CSS e JavaScript,
+                    com foco em organização e responsividade.
+                </p>
+            </div>
+
+            <div class="projeto">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Sistemas</h3>
+                <p>
+                    Estudos de lógica de programação, algoritmos e
+                    desenvolvimento de sistemas.
+                </p>
+            </div>
+
+            <div class="projeto">
+                <i class="fa-solid fa-database"></i>
+                <h3>Banco de Dados</h3>
+                <p>
+                    Práticas de organização, armazenamento e gerenciamento
+                    de informações.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contato" id="contato">
+
+        <h2 class="titulo">ENTRE EM CONTATO</h2>
+
+        <p>
+            <i class="fa-solid fa-user"></i>
+            Miguel Kaleb Batista
+        </p>
+
+        <p>
+            <i class="fa-solid fa-phone"></i>
+            (69) 99375-8060
+        </p>
+
+        <p>
+            Disponível para conversar sobre tecnologia,
+            programação e projetos.
+        </p>
+
+        <a
+            class="botao"
+            href="https://wa.me/5569993758060"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <i class="fa-brands fa-whatsapp"></i>
+            Falar pelo WhatsApp
+        </a>
+
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>
+            © 2026 Miguel Kaleb Batista.
+            Desenvolvido com HTML, CSS e JavaScript.
+        </p>
+    </footer>
+
+</body>
+</html>
